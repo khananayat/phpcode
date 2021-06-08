@@ -30,14 +30,12 @@ function sendNotification(){
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         $result = curl_exec($ch);
-		print_r($result);
-		exit();
+
         if ($result === FALSE) {
             die('Oops! FCM Send Error: ' . curl_error($ch));
         }
         curl_close($ch);
          
-         //pr($ch).die;
     }
 	sendNotification();
 ?>
